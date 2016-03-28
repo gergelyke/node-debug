@@ -1,3 +1,6 @@
+// npm install -g node-inspector
+// node-debug app.js
+
 const fs = require('fs')
 
 function parseJSON (string) {
