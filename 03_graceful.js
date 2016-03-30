@@ -10,11 +10,11 @@ const server = http.createServer((request ,response) => {
 }).listen(3000)
 
 function terminationHandler (a) {
-  Promise.all([
-    // here close db connections, etc....
-    Promise.resolve()
-  ]).then(() => {
-    server.close(() => {
+  server.close(() => {
+    Promise.all([
+      // here close db connections, etc....
+      Promise.resolve()
+    ]).then(() => {
       process.exit(0)
     })
   })
